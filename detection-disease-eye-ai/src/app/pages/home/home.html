@@ -1,0 +1,93 @@
+<div class="app-container">
+
+  <!-- HERO -->
+  <section class="hero center-col">
+    <h1 class="hero-title">Welcome to <span class="accent">AI Vibe Coding Hackathon</span></h1>
+    <p class="hero-sub">Choose your diagnostic mode:</p>
+  </section>
+
+  <!-- MODE CARDS -->
+  <section class="mode-grid">
+    <!-- Quick Scan -->
+    <div class="hack-card quick-card">
+      <h2 class="card-title">Quick Eye Scan</h2>
+      <p class="card-sub">For General Users</p>
+
+      <div class="card-illustration center">
+        <mat-icon class="big-eye">visibility</mat-icon>
+      </div>
+
+      <div class="card-actions">
+        <button mat-raised-button color="primary" class="btn-camera" (click)="openCameraModal('quick')">
+          <mat-icon>photo_camera</mat-icon>&nbsp;Use Camera
+        </button>
+        <app-upload-button
+          [buttonLabel]="'Upload Photo'"
+          [typeButton]="'general-user'"
+          (fileSelected)="onFileSelected($event, 'quick')">
+        </app-upload-button>
+      </div>
+    </div>
+
+    <!-- Specialist -->
+    <div class="hack-card specialist-card">
+      <h2 class="card-title">Specialist Mode</h2>
+      <p class="card-sub">For Medical Professionals</p>
+
+      <div class="card-illustration center">
+        <mat-icon class="doctor-icon">medical_services</mat-icon>
+      </div>
+
+      <div class="card-actions">
+        <app-upload-button
+          [buttonLabel]="'Upload Clinical Image'"
+          [typeButton]="'medical-professional'"
+          (fileSelected)="onFileSelected($event, 'specialist')">
+        </app-upload-button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results-section" #resultsSection>
+    <h3 class="section-title">AI Analysis Result</h3>
+
+    <div class="results-grid">
+      <div class="preview-card hack-card">
+        <div class="preview-img center">
+          @if (previewUrl) {
+            <img [src]="previewUrl" alt="preview" />
+          } @else {
+            <div class="empty-preview">
+              No image selected
+            </div>
+          }
+        </div>
+        <div class="capture-actions center">
+          <button mat-raised-button color="primary"
+            class="btn-capture"
+            (click)="analyze()"
+            [disabled]="!selectedFile || loading">
+            <mat-icon>analytics</mat-icon>
+            {{ loading ? 'Analyzing...' : 'Analyze Image' }}
+          </button>
+          @if (selectedFile) {
+            <button mat-stroked-button
+              color="primary"
+              class="btn-clear"
+              (click)="clearSelection()"
+              [disabled]="loading">
+              <mat-icon>delete</mat-icon>
+              Clear
+            </button>
+          }
+        </div>
+      </div>
+
+      <div class="diagnosis-card hack-card">
+        <app-result-card [prediction]="prediction"></app-result-card>
+      </div>
+    </div>
+  </section>
+
+</div>

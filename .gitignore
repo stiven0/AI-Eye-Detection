@@ -1,0 +1,19 @@
+# Angular
+detection-disease-eye-ai/node_modules
+detection-disease-eye-ai/dist
+
+# Python
+api-python/venv
+api-python/__pycache__
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+
+# models
+api-python/model_multiclass_eye_detection_resnet50_version1/
+api-python/model_multiclass_specialized_resnet50_version1/

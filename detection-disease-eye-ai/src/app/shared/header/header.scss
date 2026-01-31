@@ -1,0 +1,79 @@
+.header-toolbar {
+  height: 72px;
+  padding: 0 24px;
+  background: transparent;
+  border-bottom: 1px solid rgba(33,37,41,0.04);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  // border: 1px solid red;
+}
+
+/* Left */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  color: var(--primary-700);
+}
+
+.brand {
+  font-weight: 600;
+  color: #0f2b3a;
+  font-size: 16px;
+}
+
+/* Nav centered */
+.header-nav {
+  display: flex;
+  margin-right: 100px;
+}
+
+/* make nav visually like the mock */
+.header-nav a {
+  font-weight: 500;
+  color: #243b4a;
+  border-radius: 30px;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: all .15s ease;
+}
+
+/* active style mimicking the underline/bubble */
+.header-nav a.active {
+  font-weight: 700;
+  position: relative;
+  color: #0f2b3a;
+}
+
+.header-nav a.active::after {
+  content: "";
+  height: 6px;
+  width: 64%;
+  background: linear-gradient(90deg, rgba(36,145,209,0.15), rgba(36,145,209,0.07));
+  border-radius: 999px;
+  position: absolute;
+  left: 18%;
+  bottom: -12px;
+  box-shadow: 0 6px 20px rgba(36,145,209,0.06);
+}
+
+/* spacer */
+.spacer { flex: 1; }
+
+/* Sign in button style (pill + shadow) */
+.signin-btn {
+  border-radius: 40px;
+  padding: 6px 18px;
+  box-shadow: 0 6px 18px rgba(11,90,74,0.08);
+  border-color: rgba(33,37,41,0.06);
+}

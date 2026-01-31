@@ -1,0 +1,23 @@
+<mat-toolbar class="header-toolbar" color="transparent">
+  <div class="header-left">
+    <div class="logo-wrap">
+      <mat-icon class="logo-icon">visibility</mat-icon>
+      <div class="title">
+        <div class="brand">AI Ocular Disease Detection</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="spacer"></div>
+
+  <nav class="header-nav">
+    <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a mat-button routerLink="/about" routerLinkActive="active">About</a>
+    <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+  </nav>
+
+
+  <div class="header-right">
+    <button mat-stroked-button class="signin-btn">Sign In</button>
+  </div>
+</mat-toolbar>

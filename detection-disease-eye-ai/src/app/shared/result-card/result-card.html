@@ -1,0 +1,46 @@
+@if (prediction) {
+    <mat-card class="result-card">
+
+    <div class="title">Diagnosis</div>
+
+    <!-- MAIN RESULT -->
+    <div class="status">
+        <span class="emoji">{{ emoji }}</span>
+        <span class="label">{{ prediction.result.label | titlecase }}</span>
+    </div>
+
+    <!-- CONFIDENCE BAR -->
+    <div class="confidence-block">
+        <div class="conf-label">
+            Confidence {{ predictionResult | number:'1.0-0' }}%
+        </div>
+
+        <mat-progress-bar
+            mode="determinate"
+            [value]="predictionResult">
+        </mat-progress-bar>
+    </div>
+
+    <!-- BREAKDOWN -->
+    @if (breakdown.length > 0) {
+        <div class="breakdown">
+
+            <div class="break-title">Class probabilities</div>
+
+            @for (prediction of this.prediction.result.predictions; track $index) {
+            <div class="row">
+                <span>{{ prediction.label | titlecase }}</span>
+                <span>{{ prediction.percentage }}%</span>
+            </div>
+            }
+
+        </div>
+    }
+
+    <div class="disclaimer">
+        ⚠️ This is not a medical diagnosis. This AI tool is for educational and screening purposes only.
+        Please consult a qualified healthcare professional.
+    </div>
+
+    </mat-card>
+}
