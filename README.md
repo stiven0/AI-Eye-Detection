@@ -293,6 +293,48 @@ project-root/
 
 ---
 
+# 🧪 Test Images
+
+A small set of sample images is included in the `/test-images` folder to help reviewers quickly test the models without needing their own dataset.
+
+Folders:
+
+- `test-images/quick` → compatible with Quick Scan model
+- `test-images/specialist` → compatible with Specialist model
+
+These images were selected to match the training conditions of the models.
+
+---
+
+# ⚠️ Image Quality Requirements
+
+For reliable predictions, the AI models expect:
+
+- Only **one eye visible**
+- Eye centered in the image
+- Good lighting
+- In-focus image
+- No heavy shadows
+- No occlusions (hair, glasses glare, fingers, etc.)
+- Medium/high resolution
+
+Images that do not meet these conditions may produce unreliable predictions.
+
+For best results, please use the provided test images or similar quality inputs.
+ 
+---
+
+# 📷 Camera Capture Note
+
+The browser camera capture feature is implemented as a prototype.
+
+Prediction accuracy depends heavily on camera quality and lighting conditions.  
+For consistent results, image upload is recommended.
+
+Low-resolution webcams may reduce model performance.
+
+---
+
 # ⚠️ Disclaimer
 
 This system is **not a medical diagnosis tool**.  
