@@ -340,3 +340,13 @@ Low-resolution webcams may reduce model performance.
 This system is **not a medical diagnosis tool**.  
 Results are experimental and for demonstration purposes only.  
 Always consult a qualified medical professional.
+
+---
+# 📚 Dataset Sources
+
+The training images used for this project were obtained from publicly available datasets:
+
+- Kaggle datasets (eye and ocular condition images)
+- Roboflow Universe public datasets
+
+Each dataset retains its original license and attribution.
