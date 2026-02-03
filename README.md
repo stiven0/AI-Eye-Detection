@@ -60,6 +60,12 @@ Classes:
 - healthy
 - stye
 
+### 📊 Test Metrics
+
+- Accuracy: **95.60%**
+- Precision: **95.56%**
+- Recall: **94.51%**
+
 ---
 
 ## Specialist Model
@@ -73,6 +79,18 @@ Classes:
 - diabetic_retinopathy
 - normal
 - retinal_detachment
+
+### 📊 Test Metrics
+
+- Accuracy: **92.80%**
+- Precision: **93.24%**
+- Recall: **90.69%**
+
+---
+
+## 🧪 Evaluation Notes
+
+Metrics were computed on a held-out test dataset not used during training.
 
 ---
 
